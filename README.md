@@ -78,11 +78,46 @@ DataGrid的`Description Column`的可见性绑定到依赖属性`IsDescriptionCo
 ```
 # RoutedEventTrigger
 
+减少冒泡&隧道路由事件订阅次数的同时，还能将事件处理程序从XAML Code Behind 转移到 ViewModel，让代码更符合MVVM规范。
+
+**烂代码**
+
+```xaml
+<StackPanel
+    x:Name="StackPanel"
+    Margin="0,10,0,0"
+    ButtonBase.Click="StackPanel_Click">
+    <Button
+        MinWidth="150"
+        Margin="10"
+        Padding="5"
+        HorizontalAlignment="Center"
+        Content="Move forward 10cm"
+        Tag="10" />
+    <Button
+        MinWidth="150"
+        Margin="10"
+        Padding="5"
+        HorizontalAlignment="Center"
+        Content="Move forward 20cm"
+        Tag="20" />
+    <Button
+        MinWidth="150"
+        Margin="10"
+        Padding="5"
+        HorizontalAlignment="Center"
+        Content="Move forward 30cm"
+        Tag="30" />
+</StackPanel>
+```
+
+**更符合MVVM的好代码**
+
 ```xml
 <StackPanel x:Name="StackPanel" Margin="0,10,0,0">
     <i:Interaction.Triggers>
         <xp:RoutedEventTrigger RoutedEvent="{x:Static ButtonBase.ClickEvent}">
-            <prism:InvokeCommandAction Command="{Binding GoCommand}" TriggerParameterPath="OriginalSource.Tag" />
+            <prism:InvokeCommandAction Command="{Binding MoveCommand}" TriggerParameterPath="OriginalSource.Tag" />
         </xp:RoutedEventTrigger>
     </i:Interaction.Triggers>
     <Button
@@ -90,21 +125,129 @@ DataGrid的`Description Column`的可见性绑定到依赖属性`IsDescriptionCo
         Margin="10"
         Padding="5"
         HorizontalAlignment="Center"
-        Content="1" />
+        Content="Move forward 10cm"
+        Tag="10" />
     <Button
         MinWidth="150"
         Margin="10"
         Padding="5"
         HorizontalAlignment="Center"
-        Content="2" />
+        Content="Move forward 20cm"
+        Tag="20" />
     <Button
         MinWidth="150"
         Margin="10"
         Padding="5"
         HorizontalAlignment="Center"
-        Content="3" />
+        Content="Move forward 30cm"
+        Tag="30" />
 </StackPanel>
 ```
 
+# CallMethodAction
 
+| Property                          | Description                                                  |
+| --------------------------------- | ------------------------------------------------------------ |
+| **MethodName**                    | 指定要调用的方法名称                                         |
+| **Parameters**                    | 指定方法的实参                                               |
+| **TargetObject**                  | 方法所属的实例。默认值是CallMethodAction关联的WPF元素。      |
+| **PassTriggerArgsToMethod**       | 是否传递Trigger传递给CallMethodAction的Invoke(object args)的参数args作为Method的实参 |
+| **TriggerArgsConverter**          | 对Trigger传递的参数args进行转换（PassTriggerArgsToMethod等于True时生效） |
+| **TriggerArgsConverterParameter** | 指定TriggerArgsConverter的`object Convert(object value, Type targetType, object parameter, CultureInfo culture)`的parameter实参（PassTriggerArgsToMethod等于True时生效） |
+
+- 方法的形参可以是Parameters指定的实参的基类
+
+  如后续代码中，ViewModel的OnSubmit()的firstName的类型是object，但是Parameters传递的实参是string，但是程序运行正常。
+
+  还有void ShowMouseDownTime(MouseEventArgs e)，View传递到ViewModel的实参类型是MouseButtonEventArgs，程序依然正常运行。
+
+- Parameters指定实参的顺序和数量必须匹配方法的签名
+
+- 方法签名必须是public的实例方法且无返回void
+
+
+
+**View**
+
+```xml
+<StackPanel Orientation="Horizontal">
+    <!--  提交姓名表单  （两个参数）-->
+    <StackPanel
+        Margin="5"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Margin="0,0,20,0" Text="First Name:" />
+            <TextBox Name="FirstNameTxt" Width="200" />
+        </StackPanel>
+
+        <StackPanel
+            Margin="5"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <TextBlock Margin="0,0,16,0" Text="Last Name:" />
+            <TextBox Name="LastNameTxt" Width="200" />
+        </StackPanel>
+
+        <Button Width="100" Content="Submit">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <xp:CallMethodAction MethodName="OnSubmit" TargetObject="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext}">
+                        <xp:Parameter Value="{Binding ElementName=FirstNameTxt, Path=Text}" />
+                        <xp:Parameter Value="{Binding ElementName=LastNameTxt, Path=Text}" />
+                    </xp:CallMethodAction>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+    </StackPanel>
+
+    <!--  关闭窗体 （无参） -->
+    <Button
+        Margin="30,0,0,0"
+        Padding="5"
+        VerticalAlignment="Center"
+        Content="Close Window">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Click">
+                <xp:CallMethodAction MethodName="Close" TargetObject="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+    </Button>
+
+    <!--  显示鼠标信息  （传递事件原始参数）-->
+    <TextBlock
+        Margin="50,0,0,0"
+        VerticalAlignment="Center"
+        Text="Show Mouse Down Time">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseDown">
+                <xp:CallMethodAction
+                    MethodName="ShowMouseDownTime"
+                    PassTriggerArgsToMethod="True"
+                    TargetObject="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=DataContext}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+    </TextBlock>
+</StackPanel>
+
+```
+
+
+
+**ViewModel**
+
+```c#
+internal class MainWindowViewModel
+{
+    public void OnSubmit(object firstName,string lastName)
+    {
+        MessageBox.Show($"Hello {firstName} {lastName}!");
+    }
+
+    public void ShowMouseDownTime(MouseEventArgs e)
+    {
+        MessageBox.Show($"Mouse down at {e.Timestamp} ms");
+    }
+}
+```
 

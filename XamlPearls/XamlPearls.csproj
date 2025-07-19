@@ -3,11 +3,26 @@
 		<TargetFrameworks>net452;net6.0-windows</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<UseWPF>true</UseWPF>
-		<Version>1.1.0</Version>
+		<Version>2.0.0</Version>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<PackageProjectUrl>https://github.com/Value-Lee/XamlPearls</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Value-Lee/XamlPearls</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>xaml;wpf</PackageTags>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
+		<Description>A library of tool classes that is helpful for WPF development.</Description>
+		<PackageIcon></PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	<ItemGroup>
 	  <None Remove="XamlFont\resources\colorfont_icon.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />

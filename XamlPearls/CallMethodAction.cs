@@ -17,6 +17,7 @@ namespace XamlPearls
     {
         public static readonly DependencyProperty MethodNameProperty = DependencyProperty.Register(nameof(MethodName), typeof(string), typeof(CallMethodAction), new PropertyMetadata(null));
         public static readonly DependencyProperty ParametersProperty = DependencyProperty.Register(nameof(Parameters), typeof(AttachedCollection<Parameter>), typeof(CallMethodAction), new PropertyMetadata(null));
+        public static readonly DependencyProperty PassTriggerArgsToMethodProperty = DependencyProperty.Register(nameof(PassTriggerArgsToMethod), typeof(bool), typeof(CallMethodAction), new PropertyMetadata(false));
         public static readonly DependencyProperty TargetObjectProperty = DependencyProperty.Register(nameof(TargetObject), typeof(object), typeof(CallMethodAction), new PropertyMetadata(null));
         public static readonly DependencyProperty TriggerArgsConverterParameterProperty = DependencyProperty.Register(nameof(TriggerArgsConverterParameter), typeof(object), typeof(CallMethodAction), new PropertyMetadata(null));
         public static readonly DependencyProperty TriggerArgsConverterProperty = DependencyProperty.Register(nameof(TriggerArgsConverter), typeof(IValueConverter), typeof(CallMethodAction), new PropertyMetadata(null));
@@ -34,7 +35,11 @@ namespace XamlPearls
 
         public AttachedCollection<Parameter> Parameters => (AttachedCollection<Parameter>)GetValue(ParametersProperty);
 
-        public bool PassTriggerArgsToMethod { get; set; }
+        public bool PassTriggerArgsToMethod
+        {
+            get { return (bool)GetValue(PassTriggerArgsToMethodProperty); }
+            set { SetValue(PassTriggerArgsToMethodProperty, value); }
+        }
 
         public object TargetObject
         {
