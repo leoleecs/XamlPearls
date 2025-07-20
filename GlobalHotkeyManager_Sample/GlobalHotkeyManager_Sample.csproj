@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XamlPearls" Version="2.0.0" />
+    <ProjectReference Include="..\XamlPearls\XamlPearls.csproj" />
   </ItemGroup>
 
 </Project>

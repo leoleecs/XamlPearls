@@ -20,5 +20,16 @@ namespace BindingProxy_Sample
         {
             InitializeComponent();
         }
+
+        public string Display
+        {
+            get { return (string)GetValue(DisplayProperty); }
+            set { SetValue(DisplayProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Display.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DisplayProperty =
+            DependencyProperty.Register("Display", typeof(string), typeof(MainWindow), new PropertyMetadata("MainWindow"));
+
     }
 }

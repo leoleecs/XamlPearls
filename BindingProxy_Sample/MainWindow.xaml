@@ -7,9 +7,26 @@
     xmlns:local="clr-namespace:BindingProxy_Sample"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:xp="https://github.com/ValueLee/XamlPearls"
+    Name="Self"
     Title="MainWindow"
     Width="800"
     Height="450"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid />
+    <Window.Resources>
+        <xp:BindingProxy x:Key="BindingProxy" Data="{Binding ElementName=Self}" />
+    </Window.Resources>
+    <Grid>
+        <DataGrid AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{Binding Source={StaticResource BindingProxy}, Path=Data.Display}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="C" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 </Window>

@@ -3,7 +3,7 @@
 		<TargetFrameworks>net452;net6.0-windows</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<UseWPF>true</UseWPF>
-		<Version>2.0.0</Version>
+		<Version>2.0.1</Version>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<PackageProjectUrl>https://github.com/Value-Lee/XamlPearls</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Value-Lee/XamlPearls</RepositoryUrl>
@@ -12,11 +12,22 @@
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
 		<Description>A library of tool classes that is helpful for WPF development.</Description>
-		<PackageIcon></PackageIcon>
+		<PackageIcon>package icon.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>Value Lee</Authors>
+		<Copyright>Copyright © 2025 Value Lee</Copyright>
+		<PackageLicenseExpression>LicenseRef-Anti-996-1.0</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="package icon.png" />
 	  <None Remove="XamlFont\resources\colorfont_icon.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="package icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="..\README.md">

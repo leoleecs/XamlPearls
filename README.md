@@ -7,16 +7,18 @@
 protected override void OnSourceInitialized(EventArgs e)
 {
     base.OnSourceInitialized(e);
-    this.GlobalHotkeyManager.RegisterGlobalHotKey(new HotKeyModel("hotkey1", true, false, true, false, Keys.A), (model) =>
+    var hotKeyModel = new HotKeyModel("Ctrl+Shift+A", true, true, false, false, Keys.A);
+    this.GlobalHotkeyManager.RegisterGlobalHotKey(hotKeyModel, (model) =>
     {
-        MessageBox.Show(JsonSerializer.Serialize(model));
+        MessageBox.Show($"Hotkey pressed: {model.Name} ({model.Key})\nModifiers: {model.GetModifierKeys()}",
+        "Global Hotkey Triggered", MessageBoxButton.OK, MessageBoxImage.Information);
     });
 }
 ```
 
 ```c#
 // 注销快捷键
-GlobalHotkeyManager.UnregisterGlobalHotKey("hotkey1");
+GlobalHotkeyManager.UnregisterGlobalHotKey("Ctrl+Shift+A");
 ```
 
 ```c#
