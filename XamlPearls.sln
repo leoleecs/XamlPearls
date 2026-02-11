@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingProxy_Sample", "Bind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalHotkeyManager_Sample", "GlobalHotkeyManager_Sample\GlobalHotkeyManager_Sample.csproj", "{6DBDF725-7BCB-4FF8-8F5F-A1021A5F6A54}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LambdaConverters_Sample", "LambdaConverters_Sample", "{ECB83BCC-AE0D-483B-A1CF-41C5240D13ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,7 @@ Global
 		{120D4675-1B8F-46F8-A5A5-5287D122879A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{36A265AF-8110-4509-BE55-F2B4A1754C95} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{6DBDF725-7BCB-4FF8-8F5F-A1021A5F6A54} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{ECB83BCC-AE0D-483B-A1CF-41C5240D13ED} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E525AB3-BDB5-4F0C-BB6D-24A2BC29A634}

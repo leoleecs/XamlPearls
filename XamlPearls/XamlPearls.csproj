@@ -3,7 +3,7 @@
 		<TargetFrameworks>net452;net6.0-windows</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<UseWPF>true</UseWPF>
-		<Version>2.0.1</Version>
+		<Version>2.0.2</Version>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<PackageProjectUrl>https://github.com/Value-Lee/XamlPearls</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Value-Lee/XamlPearls</RepositoryUrl>
