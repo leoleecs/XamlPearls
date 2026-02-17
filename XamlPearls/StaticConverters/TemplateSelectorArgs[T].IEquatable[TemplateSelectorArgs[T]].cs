@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     partial struct TemplateSelectorArgs<T> : IEquatable<TemplateSelectorArgs<T>>
     {

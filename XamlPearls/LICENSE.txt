@@ -1,0 +1,32 @@
+﻿End User License Agreement (EULA)
+Version: 1.0
+Effective Date: February 17, 2026
+
+1. GRANT OF LICENSE
+This Software (including the NuGet package, DLL files, metadata, and documentation) is owned and copyrighted by [Your Name/Company Name] (the "Licensor").
+
+Non-Commercial Use: The Licensor grants you a non-exclusive, non-transferable license to use the Software for personal learning, academic research, or non-profit evaluation purposes.
+
+Commercial Use: Use of the Software in production environments, commercial products, for-profit projects, or paid services provided to third parties is STRICTLY PROHIBITED without obtaining a prior written commercial license and paying the applicable fees.
+
+2. RESTRICTIONS (KEY TERMS)
+By installing or using this Software, you expressly agree NOT to:
+
+Reverse Engineering: You shall not decompile, disassemble, reverse engineer, or otherwise attempt to derive the source code of the Software.
+
+Circumvention: You shall not bypass, modify, or defeat any license validation mechanisms, obfuscation, or functional limitations embedded in the Software.
+
+Redistribution: You shall not resell, rent, lease, or redistribute the Software as a standalone component without explicit written permission.
+
+3. TECHNICAL PROTECTION MEASURES
+You acknowledge and agree that:
+
+The Software may be protected by code obfuscation and encryption techniques to safeguard the Licensor’s trade secrets.
+
+The Licensor reserves the right to include license verification logic within the Software. Any attempt to tamper with such measures will be considered a material breach of this Agreement.
+
+4. DISCLAIMER OF WARRANTY
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED. THE LICENSOR SHALL NOT BE LIABLE FOR ANY DIRECT OR INDIRECT DAMAGES ARISING FROM THE USE OF THE SOFTWARE.
+
+5. TERMINATION AND REMEDIES
+Any violation of this Agreement, especially unauthorized commercial use or reverse engineering, will result in immediate termination of the license. The Licensor reserves the right to seek legal remedies, including but not limited to injunctive relief and monetary damages.

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Windows.Controls;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     /// <summary>
     /// A factory class used to create lambda-based instances of the <see cref="ValidationRule"/> class.

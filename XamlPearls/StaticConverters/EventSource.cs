@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     [EventSource(Name = "LambdaConverters")]
     internal sealed class EventSource : System.Diagnostics.Tracing.EventSource

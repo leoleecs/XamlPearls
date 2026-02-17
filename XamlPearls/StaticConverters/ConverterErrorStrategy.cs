@@ -1,6 +1,6 @@
 ﻿using System.Windows.Data;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     /// <summary>
     /// Defines the converter error strategy.

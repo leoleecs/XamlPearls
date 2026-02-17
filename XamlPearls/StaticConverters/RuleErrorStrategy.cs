@@ -1,4 +1,4 @@
-﻿namespace XamlPearls.LambdaConverters
+﻿namespace XamlPearls.StaticConverters
 {
     /// <summary>
     /// Defines the validation rule error strategy.

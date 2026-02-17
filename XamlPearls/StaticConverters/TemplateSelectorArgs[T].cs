@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     /// <summary>
     /// Provides data for selecting data templates.

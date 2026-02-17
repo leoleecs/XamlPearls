@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     partial struct ValidationRuleArgs<T> : IEquatable<ValidationRuleArgs<T>>
     {

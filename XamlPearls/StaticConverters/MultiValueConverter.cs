@@ -7,14 +7,14 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     /// <summary>
     /// A factory class used to create lambda-based instances of the <see cref="IMultiValueConverter"/> interface.
     /// </summary>
     public static class MultiValueConverter
     {
-        abstract class Converter : XamlPearls.LambdaConverters.Converter, IMultiValueConverter
+        abstract class Converter : XamlPearls.StaticConverters.Converter, IMultiValueConverter
         {
             protected Converter(
                 ConverterErrorStrategy errorStrategy,

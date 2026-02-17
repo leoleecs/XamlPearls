@@ -1,16 +1,18 @@
 ﻿using System.Globalization;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     /// <summary>
-    /// Provides data for conversion functions.
+    /// Provides data for parameterized conversion functions.
     /// </summary>
     /// <typeparam name="T">The value type.</typeparam>
-    public partial struct ValueConverterArgs<T>
+    /// <typeparam name="P">The parameter type.</typeparam>
+    public partial struct ValueConverterArgs<T, P>
     {
-        internal ValueConverterArgs(T value, CultureInfo culture)
+        internal ValueConverterArgs(T value, P parameter, CultureInfo culture)
         {
             Value = value;
+            Parameter = parameter;
             Culture = culture;
         }
 
@@ -18,6 +20,11 @@ namespace XamlPearls.LambdaConverters
         /// Gets the value.
         /// </summary>
         public T Value { get; }
+
+        /// <summary>
+        /// Gets the parameter.
+        /// </summary>
+        public P Parameter { get; }
 
         /// <summary>
         /// Gets the culture.

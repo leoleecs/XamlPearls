@@ -3,14 +3,14 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     /// <summary>
     /// A factory class used to create lambda-based instances of the <see cref="IValueConverter"/> interface.
     /// </summary>
     public static class ValueConverter
     {
-        abstract class Converter : XamlPearls.LambdaConverters.Converter, IValueConverter
+        abstract class Converter : XamlPearls.StaticConverters.Converter, IValueConverter
         {
             protected Converter(
                 ConverterErrorStrategy errorStrategy,

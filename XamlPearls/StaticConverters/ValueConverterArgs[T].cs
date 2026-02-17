@@ -1,14 +1,14 @@
 ﻿using System.Globalization;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     /// <summary>
-    /// Provides data for parameterized validation rule functions.
+    /// Provides data for conversion functions.
     /// </summary>
     /// <typeparam name="T">The value type.</typeparam>
-    public partial struct ValidationRuleArgs<T>
+    public partial struct ValueConverterArgs<T>
     {
-        internal ValidationRuleArgs(T value, CultureInfo culture)
+        internal ValueConverterArgs(T value, CultureInfo culture)
         {
             Value = value;
             Culture = culture;

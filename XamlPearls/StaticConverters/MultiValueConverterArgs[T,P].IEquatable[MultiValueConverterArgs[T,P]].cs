@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     partial struct MultiValueConverterArgs<T, P> : IEquatable<MultiValueConverterArgs<T, P>>
     {

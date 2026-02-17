@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Data;
 
-namespace XamlPearls.LambdaConverters
+namespace XamlPearls.StaticConverters
 {
     internal abstract class Converter
     {

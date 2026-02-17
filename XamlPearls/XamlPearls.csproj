@@ -3,47 +3,64 @@
 		<TargetFrameworks>net452;net6.0-windows</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<UseWPF>true</UseWPF>
-		<Version>2.0.2</Version>
+		<Version>2.0.3</Version>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<PackageProjectUrl>https://github.com/Value-Lee/XamlPearls</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/Value-Lee/XamlPearls</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/leoleecs/XamlPearls</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/leoleecs/XamlPearls</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>xaml;wpf</PackageTags>
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
 		<Description>A library of tool classes that is helpful for WPF development.</Description>
 		<PackageIcon>package icon.png</PackageIcon>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Authors>Value Lee</Authors>
-		<Copyright>Copyright © 2025 Value Lee</Copyright>
-		<PackageLicenseExpression>LicenseRef-Anti-996-1.0</PackageLicenseExpression>
+		<PackageReadmeFile></PackageReadmeFile>
+		<Authors>Leo Lee</Authors>
+		<Copyright>Copyright © 2026 Leo Lee</Copyright>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+
 	</PropertyGroup>
 	<ItemGroup>
-	  <None Remove="package icon.png" />
-	  <None Remove="XamlFont\resources\colorfont_icon.png" />
+		<None Remove="LICENSE.txt" />
+		<None Remove="package icon.png" />
+		<None Remove="XamlFont\resources\colorfont_icon.png" />
 	</ItemGroup>
 	<ItemGroup>
-	  <EmbeddedResource Include="package icon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </EmbeddedResource>
-	</ItemGroup>
-	<ItemGroup>
-	  <None Include="..\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<EmbeddedResource Include="LICENSE.txt">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</EmbeddedResource>
+		<EmbeddedResource Include="package icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</EmbeddedResource>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+		<PackageReference Include="Obfuscar" Version="2.2.50">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="PixiEditor.ColorPicker" Version="3.4.2" />
 		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Resource Include="XamlFont\resources\colorfont_icon.png" />
+		<Resource Include="XamlFont\resources\colorfont_icon.png" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="LambdaConverters\" />
+		<Folder Include="StaticConverters\" />
 	</ItemGroup>
+	<ItemGroup>
+		<None Update="obfuscar.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<Target Name="ObfuscarTask" AfterTargets="AfterBuild" Condition="'$(Configuration)' == 'Release'">
+		<PropertyGroup>
+			<ObfuscateCommand>"$(Obfuscar)" "Obfuscar.xml"</ObfuscateCommand>
+		</PropertyGroup>
+		<Exec WorkingDirectory="$(OutputPath)" Command="$(ObfuscateCommand)" />
+		<Copy SourceFiles="$(OutputPath)Obfuscar\$(TargetFileName)" DestinationFolder="$(IntermediateOutputPath)" OverwriteReadOnlyFiles="true" />
+		<Copy SourceFiles="$(OutputPath)Obfuscar\$(TargetFileName)" DestinationFolder="$(OutputPath)" OverwriteReadOnlyFiles="true" />
+	</Target>
 </Project>
