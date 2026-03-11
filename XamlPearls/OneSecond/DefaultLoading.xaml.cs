@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace XamlPearls.JustAsec
+namespace XamlPearls.OneSecond
 {
     /// <summary>
     /// DefaultLoading.xaml 的交互逻辑

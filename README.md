@@ -392,3 +392,6 @@ Now, you made sure that only strings which consists of digits are passed to your
 - resource declaration not needed, just use the `x:Static` expressions
 - separate class for each rule not needed anymore
 - full support for the remaining parameter `culture`
+
+# OneSecond
+

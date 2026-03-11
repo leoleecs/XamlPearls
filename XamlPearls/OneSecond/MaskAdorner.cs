@@ -5,7 +5,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace XamlPearls.JustAsec
+namespace XamlPearls.OneSecond
 {
     public class MaskAdorner : Adorner, IDisposable
     {

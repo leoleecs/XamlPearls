@@ -6,29 +6,13 @@ namespace XamlPearls
 {
     public class RoutedEventTrigger : EventTriggerBase<DependencyObject>
     {
-        private RoutedEvent routedEvent;
-
         public RoutedEventTrigger()
         {
         }
 
-        public RoutedEvent RoutedEvent
-        {
-            get
-            {
-                return this.routedEvent;
-            }
+        public RoutedEvent RoutedEvent { get; set; }
 
-            set
-            {
-                this.routedEvent = value;
-            }
-        }
-
-        protected override string GetEventName()
-        {
-            return RoutedEvent.Name;
-        }
+        protected override string GetEventName() => RoutedEvent.Name;
 
         protected override void OnAttached()
         {
@@ -50,9 +34,6 @@ namespace XamlPearls
             }
         }
 
-        private void OnRoutedEvent(object sender, RoutedEventArgs args)
-        {
-            this.OnEvent(args);
-        }
+        private void OnRoutedEvent(object sender, RoutedEventArgs args) => this.OnEvent(args);
     }
 }
