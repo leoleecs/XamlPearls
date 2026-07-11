@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace XamlPearls
+namespace XamlPearls.Miscellaneous
 {
     [ContentProperty(nameof(Parameters))]
     public class CallMethodAction : TriggerAction<DependencyObject>

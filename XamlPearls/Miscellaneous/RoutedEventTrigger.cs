@@ -2,7 +2,7 @@ using Microsoft.Xaml.Behaviors;
 using System;
 using System.Windows;
 
-namespace XamlPearls
+namespace XamlPearls.Miscellaneous
 {
     public class RoutedEventTrigger : EventTriggerBase<DependencyObject>
     {
@@ -16,8 +16,8 @@ namespace XamlPearls
 
         protected override void OnAttached()
         {
-            Behavior behavior = this.AssociatedObject as Behavior;
-            FrameworkElement associatedElement = this.AssociatedObject as FrameworkElement;
+            Behavior behavior = AssociatedObject as Behavior;
+            FrameworkElement associatedElement = AssociatedObject as FrameworkElement;
             if (behavior != null)
             {
                 associatedElement = ((IAttachedObject)behavior).AssociatedObject as FrameworkElement;
@@ -34,6 +34,12 @@ namespace XamlPearls
             }
         }
 
-        private void OnRoutedEvent(object sender, RoutedEventArgs args) => this.OnEvent(args);
+        //protected override void OnDetaching()
+        //{
+        //    (AssociatedObject as FrameworkElement).RemoveHandler(RoutedEvent, new RoutedEventHandler(this.OnRoutedEvent));
+
+        //}
+
+        private void OnRoutedEvent(object sender, RoutedEventArgs args) => OnEvent(args);
     }
 }
