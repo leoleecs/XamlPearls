@@ -26,8 +26,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueConverters_Sample", "ValueConverters_Sample\ValueConverters_Sample.csproj", "{050C34CA-507F-4E62-BE0B-866E35476A95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlPearls.Avalonia", "XamlPearls.Avalonia\XamlPearls.Avalonia.csproj", "{1A4EA34B-29EC-463C-965D-648682B9F43B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

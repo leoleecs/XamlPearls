@@ -60,7 +60,7 @@ namespace XamlPearls.ValueConverters
         {
             try
             {
-                return Convert(ConvertObjectTo<TSource>(value, culture), targetType, parameter, culture)
+                return Convert(ConvertObjectTo<TSource>(value, culture), targetType, parameter, culture);
             }
             catch
             {

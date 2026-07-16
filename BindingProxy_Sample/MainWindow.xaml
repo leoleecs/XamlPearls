@@ -6,7 +6,7 @@
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:BindingProxy_Sample"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:xp="https://github.com/ValueLee/XamlPearls"
+    xmlns:xp="https://github.com/ValueLee/XamlPearls" xmlns:xp1="https://github.com/Value-Lee/XamlPearls"
     Name="Self"
     Title="MainWindow"
     Width="800"

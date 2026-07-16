@@ -3,10 +3,10 @@
 		<TargetFrameworks>net452;net10.0-windows</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<UseWPF>true</UseWPF>
-		<Version>2.0.3</Version>
+		<Version>2026.7.12.0</Version>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<PackageProjectUrl>https://github.com/leoleecs/XamlPearls</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/leoleecs/XamlPearls</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/atomtick/XamlPearls</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/atomtick/XamlPearls</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>xaml;wpf</PackageTags>
 		<IncludeSymbols>True</IncludeSymbols>
@@ -14,8 +14,8 @@
 		<Description>A library of tool classes that is helpful for WPF development.</Description>
 		<PackageIcon>package icon.png</PackageIcon>
 		<PackageReadmeFile></PackageReadmeFile>
-		<Authors>Leo Lee</Authors>
-		<Copyright>Copyright © 2026 Leo Lee</Copyright>
+		<Authors>atomtick</Authors>
+		<Copyright>Copyright © 2026 atomtick</Copyright>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 
@@ -52,12 +52,12 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
-	<Target Name="ObfuscarTask" AfterTargets="AfterBuild" Condition="'$(Configuration)' == 'Release'">
+	<!--<Target Name="ObfuscarTask" AfterTargets="AfterBuild" Condition="'$(Configuration)' == 'Release'">
 		<PropertyGroup>
 			<ObfuscateCommand>"$(Obfuscar)" "Obfuscar.xml"</ObfuscateCommand>
 		</PropertyGroup>
 		<Exec WorkingDirectory="$(OutputPath)" Command="$(ObfuscateCommand)" />
 		<Copy SourceFiles="$(OutputPath)Obfuscar\$(TargetFileName)" DestinationFolder="$(IntermediateOutputPath)" OverwriteReadOnlyFiles="true" />
 		<Copy SourceFiles="$(OutputPath)Obfuscar\$(TargetFileName)" DestinationFolder="$(OutputPath)" OverwriteReadOnlyFiles="true" />
-	</Target>
+	</Target>-->
 </Project>
