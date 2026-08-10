@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace XamlPearls.Shortcuts
+namespace XamlPearls.Wpf.Keyboard
 {
     // Summary:
     //     Specifies key codes and modifiers.

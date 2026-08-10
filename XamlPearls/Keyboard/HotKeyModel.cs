@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace XamlPearls.Shortcuts
+namespace XamlPearls.Wpf.Keyboard
 {
     public class HotKeyModel
     {

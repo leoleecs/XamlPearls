@@ -6,15 +6,15 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 
-namespace XamlPearls.Shortcuts
+namespace XamlPearls.Wpf.Keyboard
 {
-    public static class GlobalHotkeyManager
+    public static class HotkeyManager
     {
         private const int WM_HOTKEY = 0x312;
 
         private static List<(int id, Window window, IntPtr intPtr, Action<HotKeyModel> action, HotKeyModel model)> _hotKeyInfos;
 
-        static GlobalHotkeyManager()
+        static HotkeyManager()
         {
             _hotKeyInfos = new List<(int id, Window window, IntPtr intPtr, Action<HotKeyModel> action, HotKeyModel model)>();
         }

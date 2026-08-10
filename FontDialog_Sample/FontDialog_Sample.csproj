@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XamlPearls\XamlPearls.csproj" />
+    <ProjectReference Include="..\XamlPearls\XamlPearls.Wpf.csproj" />
   </ItemGroup>
 
 </Project>

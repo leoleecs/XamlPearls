@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.4.11605.240
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlPearls", "XamlPearls\XamlPearls.csproj", "{7F2BD161-D9ED-4D64-A892-6E52FAF7AF61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlPearls.Wpf", "XamlPearls\XamlPearls.Wpf.csproj", "{7F2BD161-D9ED-4D64-A892-6E52FAF7AF61}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -27,6 +27,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueConverters_Sample", "ValueConverters_Sample\ValueConverters_Sample.csproj", "{050C34CA-507F-4E62-BE0B-866E35476A95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlPearls.Avalonia", "XamlPearls.Avalonia\XamlPearls.Avalonia.csproj", "{FCB16EB8-C061-47EA-9A5C-945AE20E9C7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamlPearls.Core", "XamlPearls.Core\XamlPearls.Core.csproj", "{8EA6B4BB-5BED-4D71-8D74-35D2FD381F67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +72,10 @@ Global
 		{FCB16EB8-C061-47EA-9A5C-945AE20E9C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCB16EB8-C061-47EA-9A5C-945AE20E9C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCB16EB8-C061-47EA-9A5C-945AE20E9C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA6B4BB-5BED-4D71-8D74-35D2FD381F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA6B4BB-5BED-4D71-8D74-35D2FD381F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA6B4BB-5BED-4D71-8D74-35D2FD381F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA6B4BB-5BED-4D71-8D74-35D2FD381F67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
